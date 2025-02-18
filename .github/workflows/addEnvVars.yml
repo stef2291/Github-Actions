@@ -11,7 +11,7 @@ env:
 jobs:
   mainjob:
     name: 'Print Evnironment Variables'
-    runs-on: ubuntu latest
+    runs-on: ubuntu-latest
 
     env:
       Greeting: Dear
