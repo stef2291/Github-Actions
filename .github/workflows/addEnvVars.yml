@@ -36,7 +36,7 @@ jobs:
 
     - name: 'Use the new Variable'
       run: 
-        echo "${{ env.dynamic_var }}"
+        echo "${{ dynamic_var }}"
 
 
 
