@@ -1,1 +1,41 @@
 
+name: A Basic Workflow
+
+on: 
+  push:
+    branches: [ "main" ]
+
+    # Workflow runs only when a change happens in a file in in this path
+    paths: [ ".github/*" ]
+
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch: 
+  
+jobs:
+  build-app:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Run a one-line script
+        run: echo Hello, world!
+      
+  build-api:
+    runs-on: windows-latest
+    steps:
+      - run: echo "Building API"
+
+  build-db: 
+    needs: build-app
+    runs-on: windows-latest
+    steps:
+      - run: echo "Hello Windows"
+  
+  package:
+    needs: [ build-app, build-db ]
+    runs-on: macos-latest
+    steps:
+      - run: echo "Hello MacOS"
