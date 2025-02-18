@@ -1,0 +1,10 @@
+name: List of Github Environment Variables
+
+on:
+  workflow_dispatch:
+
+jobs:
+  ubuntu-env-vars:
+    runs-on: ubuntu-latest
+    steps:
+      - run: env
