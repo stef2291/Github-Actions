@@ -32,11 +32,11 @@ jobs:
     steps:
     - name: 'Set Up Env Var Dynamically'
       run: 
-        echo "dynamic_var=value-4"
+        echo "dynamic_var=value-4" >> $ENV_VAR
 
     - name: 'Use the new Variable'
       run: 
-        echo "${{ dynamic_var }}"
+        echo "${{ env.dynamic_var }}"
 
 
 
