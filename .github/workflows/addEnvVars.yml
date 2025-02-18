@@ -15,14 +15,14 @@ jobs:
 
     env:
       Greeting: Dear
-      testvar: value-2
+      Second_Var: value-2
 
     steps:
     - name: print-values-of-env-variables
       run: |
         echo "$Greeting $First_Name. Today is $DAY_OF_THE_WEEK!"
         echo "local testvar $testvar"
-        echo "global testvar ${{ env.testvar }}"
+        echo "Var from global ${{ env.Second_Var }}"
       env:
         First_Name: Student
         testvar: value-3
