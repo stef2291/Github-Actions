@@ -26,4 +26,21 @@ jobs:
       env:
         First_Name: Student
         testvar: value-3
+      
+  custom_ENV_VAR:
+    runs-on: ubuntu-latest
+    steps:
+    - name: 'Set Up Env Var Dynamically'
+      run: 
+        echo "dynamic_var=value-4"
+
+    - name: 'Use the new Variable'
+      run: 
+        echo "${{ env.dynamic_var }}"
+
+
+
+
+
+
 
