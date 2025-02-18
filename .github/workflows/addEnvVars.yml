@@ -32,7 +32,7 @@ jobs:
     steps:
     - name: 'Set Up Env Var Dynamically'
       run: 
-        echo "dynamic_var=value-4" >> $VAR_ENV
+        echo "dynamic_var=value-4" >> $GITHUB_ENV
 
     - name: 'Use the new Variable'
       run: 
