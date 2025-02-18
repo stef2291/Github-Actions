@@ -27,7 +27,7 @@ jobs:
         First_Name: Student
         testvar: value-3
       
-  custom_VAR_ENV:
+  custom_GITHUB_ENV:
     runs-on: ubuntu-latest
     steps:
     - name: 'Set Up Env Var Dynamically'
