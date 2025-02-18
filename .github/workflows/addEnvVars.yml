@@ -27,12 +27,12 @@ jobs:
         First_Name: Student
         testvar: value-3
       
-  custom_ENV_VAR:
+  custom_VAR_ENV:
     runs-on: ubuntu-latest
     steps:
     - name: 'Set Up Env Var Dynamically'
       run: 
-        echo "dynamic_var=value-4" >> $ENV_VAR
+        echo "dynamic_var=value-4" >> $VAR_ENV
 
     - name: 'Use the new Variable'
       run: 
