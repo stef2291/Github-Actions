@@ -2,15 +2,6 @@
 name: Adding Environment Variables
 
 on: 
-  push:
-    branches: [ "main" ]
-
-    # Workflow runs only when a change happens in a file in in this path
-    # paths: [ ".github/*" ]
-
-  pull_request:
-    branches: [ "main" ]
-
   workflow_dispatch: 
 
 env: 
