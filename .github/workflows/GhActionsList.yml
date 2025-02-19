@@ -1,0 +1,9 @@
+name: List of GitHub Actions List
+on:
+  workflow_dispatch:
+  
+jobs:
+  print-gh-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: actions
