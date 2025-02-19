@@ -6,4 +6,4 @@ jobs:
   print-gh-actions:
     runs-on: ubuntu-latest
     steps:
-      - run: actions
+      - run: ls -R .github/workflows/
