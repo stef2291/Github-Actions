@@ -1,0 +1,25 @@
+name: Paasing Values Between Jobs
+
+on: 
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  
+  create-vars:
+    runs-on: ubuntu-latest
+    steps:
+
+      - id: create-vars-step-1
+        run: echo "name=John" >> $GITHUB_ENV
+
+      - id: create-vars-step-2
+        run: echo "surname=Doe" >> $GITHUB_ENV
+    
+  print-values:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello, my name is ${{ steps.create-vars-step-1 }} and my surname is ${{ steps.create-vars-step-2 }}!"
+    
