@@ -22,5 +22,5 @@ jobs:
     runs-on: ubuntu-latest
     needs: create-vars
     steps:
-      - run: echo "Hello, my name is ${{ steps.create-vars-step-1.outputs.name }} and my surname is ${{ steps.create-vars-step-2.outputs.surname }}!"
+      - run: echo Hello, my name is ${{ steps.create-vars-step-1.outputs.name }} and my surname is ${{ steps.create-vars-step-2.outputs.surname }}!
     
