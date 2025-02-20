@@ -1,4 +1,4 @@
-name: Paasing Values Between Jobs
+name: Passing Values Between Jobs
 
 on: 
   push:
@@ -14,16 +14,14 @@ jobs:
       name: ${{ steps.create-vars-step-1.outputs.name }}
       surname: ${{ steps.create-vars-step-2.outputs.surname }}
     steps:
-
       - id: create-vars-step-1
-        run: echo "{name}={John}" >> $GITHUB_OUTPUT
+        run: echo "name=John" >> "$GITHUB_OUTPUT"
 
       - id: create-vars-step-2
-        run: echo "{surname}={Doe}" >> $GITHUB_OUTPUT
+        run: echo "surname=Doe" >> "$GITHUB_OUTPUT"
     
   print-values:
     runs-on: ubuntu-latest
     needs: create-vars
     steps:
-      - run: echo Hello, my name is ${{ needs.create-vars-step-1.outputs.name }} and my surname is ${{ needs.create-vars-step-2.outputs.surname }}!
-    
+      - run: echo "Hello, my name is ${{ needs.create-vars.outputs.name }} and my surname is ${{ needs.create-vars.outputs.surname }}!"
