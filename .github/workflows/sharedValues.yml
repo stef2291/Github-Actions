@@ -21,6 +21,6 @@ jobs:
         run: |
           echo "Print Values"
           echo variable env_var should be value-1 :: ${{ env.env_var }}
-          echo variable repo_name should be my github repo :: ${{ env.repo_name }}
-          echo variable date should be the date and time the pipeline was triggered :: ${{ env.date }}
+          echo variable repo_name should be my github repo :: ${{ env.var_source_step.outputs.repo_name }}
+          echo variable date should be the date and time the pipeline was triggered :: ${{ env.var_source_step.outputs.date }}
            
