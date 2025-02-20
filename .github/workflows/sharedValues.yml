@@ -15,6 +15,7 @@ jobs:
         run: |
           echo "Creating Values"
           echo "::set-output name=repo_name::$GITHUB_REPOSITORY_OWNER"
+          echo "::set-output name=my_name::Stef"
           echo "::set-output name=date::$(date + '%Y-%m-%d-%H-%M')"
       
       - name: Reuse-Variable-Value
@@ -22,5 +23,6 @@ jobs:
           echo "Print Values"
           echo variable env_var should be value-1 :: ${{ env.env_var }}
           echo variable repo_name should be my github repo :: ${{ env.var_source_step.outputs.repo_name }}
+          echo variable my_name should be my Stef :: ${{ env.var_source_step.outputs.my_name }}
           echo variable date should be the date and time the pipeline was triggered :: ${{ env.var_source_step.outputs.date }}
            
