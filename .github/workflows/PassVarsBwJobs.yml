@@ -10,6 +10,9 @@ jobs:
   
   create-vars:
     runs-on: ubuntu-latest
+    outputs:
+      name: ${{ steps.create-vars-step-1.outputs.name }}
+      surname: ${{ steps.create-vars-step-2.outputs.surname }}
     steps:
 
       - id: create-vars-step-1
