@@ -21,5 +21,5 @@ jobs:
   print-values:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello, my name is ${{ steps.create-vars-step-1 }} and my surname is ${{ steps.create-vars-step-2 }}!"
+      - run: echo "Hello, my name is ${{ steps.create-vars-step-1.name }} and my surname is ${{ steps.create-vars-step-2.surname }}!"
     
