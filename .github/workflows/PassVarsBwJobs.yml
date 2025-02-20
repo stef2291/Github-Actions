@@ -15,10 +15,10 @@ jobs:
       surname: ${{ steps.create-vars-step-2.outputs.surname }}
     steps:
       - id: create-vars-step-1
-        run: echo "name=John" >> "$GITHUB_OUTPUT"
+        run: echo "{name}={John}" >> "$GITHUB_OUTPUT"
 
       - id: create-vars-step-2
-        run: echo "surname=Doe" >> "$GITHUB_OUTPUT"
+        run: echo "{surname}={Doe}" >> "$GITHUB_OUTPUT"
     
   print-values:
     runs-on: ubuntu-latest
