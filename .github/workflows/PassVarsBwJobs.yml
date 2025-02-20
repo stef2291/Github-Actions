@@ -13,14 +13,14 @@ jobs:
     steps:
 
       - id: create-vars-step-1
-        run: echo "name=John" >> $GITHUB_ENV
+        run: echo "{name}={John}" >> $GITHUB_OUTPUT
 
       - id: create-vars-step-2
-        run: echo "surname=Doe" >> $GITHUB_ENV
+        run: echo "{surname}={Doe}" >> $GITHUB_OUTPUT
     
   print-values:
     runs-on: ubuntu-latest
     needs: create-vars
     steps:
-      - run: echo "Hello, my name is ${{ steps.create-vars-step-1.name }} and my surname is ${{ steps.create-vars-step-2.surname }}!"
+      - run: echo "Hello, my name is ${{ steps.create-vars-step-1.outputs.name }} and my surname is ${{ steps.create-vars-step-2.outputs.surname }}!"
     
