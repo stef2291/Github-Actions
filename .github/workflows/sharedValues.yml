@@ -1,0 +1,26 @@
+name: Passing Values Betweeen Steps
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  passing-values-bw-steps:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set Up A Value
+        run: echo "env_var=value-1" >> $GITHUB_ENV
+
+      - name: Create variables using GitHub Commands
+        id: var_source_step
+        run: |
+          echo "Creating Values"
+          echo "::set-output name=repo_name::$GITHUB_REPOSITORY_OWNER"
+          echo "::set-output name=date::$(date + '%Y-%m-%d-%H-%M')"
+      
+      - name: Reuse-Variable-Value
+        run: |
+          echo "Print Values"
+          echo variable env_var should be value-1 :: ${{ env.env_var }}
+          echo variable repo_name should be my github repo :: ${{ env.env_var }}
+          echo variable date should be the date and time the pipeline was triggered :: ${{ env.env_var }}
+           
