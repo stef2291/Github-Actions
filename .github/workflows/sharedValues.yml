@@ -16,7 +16,7 @@ jobs:
           echo "Creating Values"
           echo "::set-output name=repo_name::$GITHUB_REPOSITORY_OWNER"
           echo "::set-output name=my_name::Stef"
-          echo "::set-output name=date::$(date + '%Y-%m-%d-%H-%M')"
+          echo "::set-output name=date::$(date +'%Y-%m-%d-%H-%M')"
       
       - name: Reuse-Variable-Value
         run: |
